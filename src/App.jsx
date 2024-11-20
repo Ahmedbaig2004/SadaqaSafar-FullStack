@@ -9,6 +9,8 @@ import NGOLogin from './pages/auth/NGOlogin';
 import NGORegister from './pages/auth/NGORegister';
 import Dashboard from './pages/Dashboard';
 import NGODetails from './pages/NGODetails';
+import UserProfileSettings from './pages/UserProfileSettings';
+import NGOProfileSettings from './pages/NGOProfileSettings';
 import { Heart } from 'lucide-react';
 
 
@@ -27,7 +29,8 @@ function App() {
             <Route path="/ngo-login" element={<NGOLogin/>} />
             <Route path="/ngos" element={<NGOList/>} />
             <Route path="/ngos/:id" element={<NGODetails />} />
-          
+            <Route path="/profile/settings" element={<UserProfileSettings />} />
+            <Route path="/ngo-profile/settings" element={<NGOProfileSettings />} />
 
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
