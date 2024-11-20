@@ -3,9 +3,14 @@ import axios from 'axios';
 const API_URL = 'http://localhost:3000/api';
 
 export const createDonation = async (donationData, token) => {
-  const response = await axios.post(`${API_URL}/donations`, donationData, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
+  const { causeId, amount, message, anonymous } = donationData
+  const response = await axios.post(`${API_URL}/donations`, { causeId, amount, anonymous, message },
+    {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'Application/json'
+      }
+    });
   return response.data;
 };
 

@@ -159,6 +159,8 @@ const NGODetails = () => {
         </div>
       </div>
 
+      {!user && <div className="text-center text-2xl font-bold text-gray-900">LOGIN AS USER TO DONATE</div>}
+
       {/* Causes Section */}
       <h2 className="text-2xl font-bold text-gray-900 mb-4">Active Causes</h2>
       {causes.length === 0 ? (

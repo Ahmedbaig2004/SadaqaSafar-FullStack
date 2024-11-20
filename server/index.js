@@ -27,6 +27,7 @@ const io = new Server(httpServer, {
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI)

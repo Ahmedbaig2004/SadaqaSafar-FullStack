@@ -1,12 +1,15 @@
 import Donation from '../models/Donation.js';
 import Cause from '../models/Cause.js';
 import stripe from 'stripe';
+import jwt from 'jsonwebtoken';
 
 const stripeClient = stripe(process.env.STRIPE_SECRET_KEY);
 
 export const createDonation = async (req, res) => {
   try {
     const { causeId, amount, anonymous, message } = req.body;
+    const token = req.headers.authorization.split(" ")[1]
+    const user = jwt.verify(token, process.env.JWT_SECRET)
     const cause = await Cause.findById(causeId);
 
     if (!cause) {
@@ -17,11 +20,11 @@ export const createDonation = async (req, res) => {
     const paymentIntent = await stripeClient.paymentIntents.create({
       amount: amount * 100, // Convert to cents
       currency: 'inr',
-      metadata: { causeId, userId: req.user._id }
+      metadata: { causeId, userId: user.id }
     });
 
     const donation = await Donation.create({
-      user: req.user._id,
+      user: user.id,
       cause: causeId,
       amount,
       paymentId: paymentIntent.id,
@@ -45,7 +48,7 @@ export const createDonation = async (req, res) => {
 
 export const getUserDonations = async (req, res) => {
   try {
-    const donations = await Donation.find({ user: req.user._id })
+    const donations = await Donation.find({ user: user.id })
       .populate('cause', 'title')
       .sort('-createdAt');
     res.json(donations);
