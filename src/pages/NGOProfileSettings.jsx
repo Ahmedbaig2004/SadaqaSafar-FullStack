@@ -50,7 +50,7 @@ const NGOProfileSettings = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500  dark:text-gray-900"
             required
           />
         </div>
@@ -63,7 +63,7 @@ const NGOProfileSettings = () => {
             name="password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500  dark:text-gray-900"
           />
         </div>
 
@@ -75,7 +75,7 @@ const NGOProfileSettings = () => {
             name="confirmPassword"
             value={formData.confirmPassword}
             onChange={handleChange}
-            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500  dark:text-gray-900"
           />
         </div>
 
@@ -87,7 +87,7 @@ const NGOProfileSettings = () => {
             name="registrationNumber"
             value={formData.registrationNumber}
             onChange={handleChange}
-            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500  dark:text-gray-900"
             required
           />
         </div>
@@ -100,7 +100,7 @@ const NGOProfileSettings = () => {
             name="domain"
             value={formData.domain}
             onChange={handleChange}
-            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500  dark:text-gray-900"
             required
           />
         </div>
@@ -112,7 +112,7 @@ const NGOProfileSettings = () => {
             name="description"
             value={formData.description}
             onChange={handleChange}
-            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500  dark:text-gray-900"
             rows="4"
             required
           ></textarea>
@@ -126,7 +126,7 @@ const NGOProfileSettings = () => {
             name="logo"
             value={formData.logo}
             onChange={handleChange}
-            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500  dark:text-gray-900"
           />
         </div>
 

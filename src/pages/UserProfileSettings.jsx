@@ -27,7 +27,7 @@ const UserProfileSettings = () => {
 
   return (
     <div className="max-w-lg mx-auto bg-white p-8 rounded-lg shadow">
-      <h2 className="text-2xl font-bold mb-4">Profile Settings</h2>
+      <h2 className="text-2xl font-bold mb-4  dark:text-gray-900">Profile Settings</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Username</label>
@@ -36,7 +36,7 @@ const UserProfileSettings = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full border-gray-300 rounded-md shadow-sm"
+            className="w-full border-gray-300 rounded-md shadow-sm  dark:text-gray-900"
             required
           />
         </div>
@@ -47,7 +47,8 @@ const UserProfileSettings = () => {
             name="password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full border-gray-300 rounded-md shadow-sm"
+            className="w-full border-gray-300 rounded-md shadow-sm  dark:text-gray-900 "
+          
           />
         </div>
         <div className="mb-4">
@@ -57,7 +58,7 @@ const UserProfileSettings = () => {
             name="profilePicture"
             value={formData.profilePicture}
             onChange={handleChange}
-            className="w-full border-gray-300 rounded-md shadow-sm"
+            className="w-full border-gray-300 rounded-md shadow-sm dark:text-gray-900"
           />
         </div>
         <button type="submit" className="bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-700">
