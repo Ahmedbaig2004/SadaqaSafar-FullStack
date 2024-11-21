@@ -1,10 +1,11 @@
-import express from "express";
-import { updateUserProfile, updateNGOProfile } from "../controllers/profileController.js";
-import { protect } from "../middleware/authMiddleware.js";
+import express from 'express';
+import { protect, userOnly, ngoOnly } from '../middleware/authMiddleware.js';
+import { updateUserProfile, updateNGOProfile } from '../controllers/profileController.js';
 
 const router = express.Router();
 
-router.put("/user", protect, updateUserProfile);
-router.put("/ngo", protect, updateNGOProfile);
+// Profile routes with role-specific middleware
+router.put('/user', protect, userOnly, updateUserProfile);
+router.put('/ngo', protect, ngoOnly, updateNGOProfile);
 
 export default router;

@@ -32,11 +32,16 @@ export const protect = async (req, res, next) => {
         return res.status(401).json({ message: 'Authentication failed' });
       }
 
+      // Set both auth and user/userRole for backward compatibility
       req.auth = {
         id: authenticatedEntity._id,
         type: decoded.role.toUpperCase(),
         entity: authenticatedEntity
       };
+      
+      // These are used by the profile routes
+      req.user = authenticatedEntity;
+      req.userRole = decoded.role;
 
       next();
     } else {
@@ -49,11 +54,18 @@ export const protect = async (req, res, next) => {
 };
 
 export const ngoOnly = (req, res, next) => {
-  if (req.auth && req.auth.type === 'NGO') {
+  if ((req.auth && req.auth.type === 'NGO') || (req.userRole === 'ngo')) {
     next();
   } else {
     res.status(403).json({ message: 'Access denied. NGOs only.' });
   }
 };
 
-// ... other middleware functions ...
+// Helper middleware for profile routes
+export const userOnly = (req, res, next) => {
+  if ((req.auth && req.auth.type === 'USER') || (req.userRole === 'user')) {
+    next();
+  } else {
+    res.status(403).json({ message: 'Access denied. Users only.' });
+  }
+};
