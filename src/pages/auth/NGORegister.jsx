@@ -66,8 +66,8 @@ export default function NGORegister() {
   return (
     <div className="max-w-md mx-auto">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Register NGO</h1>
-        <p className="mt-2 text-gray-600">Join us in making a difference</p>
+        <h1 className="text-3xl font-bold text-gray-900  dark:text-white">Register NGO</h1>
+        <p className="mt-2 text-gray-500">Join us in making a difference</p>
       </div>
 
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-sm">
@@ -88,7 +88,7 @@ export default function NGORegister() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2 border border-gray-300  text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               required
             />
           </div>
@@ -103,7 +103,7 @@ export default function NGORegister() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2 border border-gray-300  text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               required
             />
           </div>
@@ -118,7 +118,7 @@ export default function NGORegister() {
               name="registrationNumber"
               value={formData.registrationNumber}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2 border border-gray-300  text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               required
             />
           </div>
@@ -131,7 +131,7 @@ export default function NGORegister() {
               name="domain"
               value={formData.domain}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2 border border-gray-300  text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               rows={1}
             
             />
@@ -146,7 +146,7 @@ export default function NGORegister() {
               name="description"
               value={formData.description}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2 border border-gray-300  text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               rows={3}
               required
             />
@@ -162,7 +162,7 @@ export default function NGORegister() {
     name="logo"
     value={formData.logo}
     onChange={handleChange}
-    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+    className="w-full px-4 py-2 border border-gray-300  text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
     placeholder="Enter the URL of your NGO's logo"
   />
 </div>
@@ -178,7 +178,7 @@ export default function NGORegister() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2 border border-gray-300  text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               required
             />
           </div>
@@ -193,7 +193,7 @@ export default function NGORegister() {
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2 border border-gray-300  text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               required
             />
           </div>
@@ -208,7 +208,7 @@ export default function NGORegister() {
           </button>
         </div>
 
-        <div className="mt-6 text-center text-gray-600">
+        <div className="mt-6 text-center text-gray-500">
           <p>
             Already registered?{' '}
             <Link to="/login-ngo" className="text-emerald-600 hover:text-emerald-700">

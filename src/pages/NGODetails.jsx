@@ -144,13 +144,13 @@ const NGODetails = () => {
         />
         <div className="p-6">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">{ngo.name}</h1>
-          <div className="flex items-center text-gray-600 mb-4">
+          <div className="flex items-center text-gray-500 mb-4 ">
             <Building2 className="w-5 h-5 mr-2" />
             <span>{ngo.domain}</span>
             <MapPin className="w-5 h-5 ml-4 mr-2" />
             <span>{ngo.location}</span>
           </div>
-          <p className="text-gray-700 mb-4">{ngo.description}</p>
+          <p className="text-gray-700 mb-4  ">{ngo.description}</p>
           {ngo.verified && (
             <span className="bg-emerald-100 text-emerald-600 text-sm px-3 py-1 rounded-full">
               Verified
@@ -162,23 +162,18 @@ const NGODetails = () => {
       {!user && <div className="text-center text-2xl font-bold text-gray-900">LOGIN AS USER TO DONATE</div>}
 
       {/* Causes Section */}
-      <h2 className="text-2xl font-bold text-gray-900 mb-4">Active Causes</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-4  dark:text-white">Active Causes</h2>
       {causes.length === 0 ? (
-        <p className="text-center text-gray-600">No active causes at the moment.</p>
+        <p className="text-center text-gray-500  dark:text-white">No active causes at the moment.</p>
       ) : (
         <div className="grid md:grid-cols-2 gap-6">
           {causes.map((cause) => (
             <div key={cause._id} className="bg-white rounded-xl shadow-md overflow-hidden">
-              <img
-                src={cause.images?.[0] || 'https://via.placeholder.com/800x300'}
-                alt={cause.title}
-                className="w-full h-48 object-cover"
-              />
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{cause.title}</h3>
-                <p className="text-gray-600 mb-4">{cause.description}</p>
+                <p className="text-gray-500  dark:text-gray-500 mb-4">{cause.description}</p>
                 <div className="flex justify-between items-center mb-4">
-                  <div className="flex items-center text-gray-600">
+                  <div className="flex items-center text-gray-500">
                     <Calendar className="w-4 h-4 mr-1" />
                     <span>{new Date(cause.endDate).toLocaleDateString()}</span>
                   </div>
@@ -199,7 +194,7 @@ const NGODetails = () => {
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <div className="text-gray-600">
+                  <div className="text-gray-500">
                     <DollarSign className="w-4 h-4 inline mr-1" />
                     <span>{cause.raisedAmount || 0}</span> / <span>{cause.goalAmount}</span>
                   </div>
