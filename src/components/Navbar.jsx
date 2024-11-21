@@ -93,22 +93,21 @@ export default function Navbar() {
 
             {user || ngo ? (
               <>
-                {/* Profile and Logout */}
-                <Link
-                  to={ngo ? "/ngo-profile/settings" : "/profile/settings"}
-                  className="flex items-center space-x-2 text-gray-500 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400"
-                >
-                  <User className="h-5 w-5" />
-                  <span>{ngo ? ngo.name : user.name}</span>
-                </Link>
-                <button
-                  onClick={handleLogout}
-                  className="flex items-center space-x-2 text-gray-500 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400"
-                >
-                  <LogOut className="h-5 w-5" />
-                  <span>Logout</span>
-                </button>
-              </>
+              <Link
+                to={ngo ? "/ngo/settings" : "/profile/settings"}
+                className="flex items-center space-x-2 text-gray-500 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400"
+              >
+                <User className="h-5 w-5" />
+                <span>{ngo ? ngo.name : user.name}</span>
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="flex items-center space-x-2 text-gray-500 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400"
+              >
+                <LogOut className="h-5 w-5" />
+                <span>Logout</span>
+              </button>
+            </>
             ) : (
               <>
                 <Link
