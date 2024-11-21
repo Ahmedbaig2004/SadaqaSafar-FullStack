@@ -17,10 +17,7 @@ export const updateUserProfile = async (req, res) => {
 
     if (name) user.name = name;
     if (profilePicture) user.profilePicture = profilePicture;
-    if (password) {
-      const salt = await bcrypt.genSalt(10);
-      user.password = await bcrypt.hash(password, salt);
-    }
+    if (password) user.password = password;
 
     const updatedUser = await user.save();
     
@@ -57,10 +54,7 @@ export const updateNGOProfile = async (req, res) => {
     if (domain) ngo.domain = domain;
     if (description) ngo.description = description;
     if (logo) ngo.logo = logo;
-    if (password) {
-      const salt = await bcrypt.genSalt(10);
-      ngo.password = await bcrypt.hash(password, salt);
-    }
+    if (password) ngo.password = password;
 
     const updatedNGO = await ngo.save();
     

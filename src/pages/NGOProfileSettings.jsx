@@ -141,7 +141,6 @@ const NGOProfileSettings = () => {
             value={formData.registrationNumber}
             onChange={handleChange}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-            required
           />
         </div>
 
@@ -152,7 +151,6 @@ const NGOProfileSettings = () => {
             value={formData.domain}
             onChange={handleChange}
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-            required
           >
             <option value="">Select Domain</option>
             <option value="education">Education</option>
@@ -171,7 +169,6 @@ const NGOProfileSettings = () => {
             onChange={handleChange}
             rows="4"
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-            required
           ></textarea>
         </div>
 

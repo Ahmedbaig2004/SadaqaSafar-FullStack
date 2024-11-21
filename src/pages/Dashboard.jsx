@@ -165,11 +165,27 @@ export default function NGODashboard() {
                     <h3 className="text-xl font-semibold mb-2 dark:text-gray-300">{cause.title}</h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">{cause.description}</p>
                     <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
-                      <span className="font-medium">Goal: ₹{cause.goalAmount}</span>
+                      <div>
+
+                      <span className="font-medium">Goal: ₹ {cause.raisedAmount || 0}</span> / <span className="font-medium">{cause.goalAmount}</span>
+                      </div>
                       <span className="bg-emerald-100 dark:bg-emerald-700 text-emerald-800 dark:text-emerald-200 px-2 py-1 rounded-full text-xs">
                         {cause.category}
                       </span>
+                      
                     </div>
+                    <div className="mb-4">
+                  <div className="flex justify-between text-sm mb-1 mt-2">
+                    <span>Progress</span>
+                    <span>{Math.round((cause.raisedAmount / cause.goalAmount) * 100)}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2.5">
+                    <div
+                      className="bg-emerald-600 h-2.5 rounded-full"
+                      style={{ width: `${(cause.raisedAmount / cause.goalAmount) * 100}%` }}
+                    ></div>
+                  </div>
+                </div>
                     <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
                       Ends on: {new Date(cause.endDate).toLocaleDateString()}
                     </div>
