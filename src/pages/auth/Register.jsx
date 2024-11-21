@@ -54,8 +54,8 @@ const Register = () => {
   return (
     <div className="max-w-md mx-auto">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Create Account</h1>
-        <p className="mt-2 text-gray-600">Join us in making a difference</p>
+        <h1 className="text-3xl font-bold text-gray-900  dark:text-white">Create Account</h1>
+        <p className="mt-2 text-gray-500">Join us in making a difference</p>
       </div>
 
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-sm">
@@ -76,7 +76,7 @@ const Register = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2 border border-gray-300  text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               required
             />
           </div>
@@ -91,7 +91,7 @@ const Register = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2 border border-gray-300  text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               required
             />
           </div>
@@ -106,7 +106,7 @@ const Register = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2 border border-gray-300  text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               required
             />
           </div>
@@ -121,7 +121,7 @@ const Register = () => {
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-4 py-2 border border-gray-300  text-gray-900 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               required
             />
           </div>
@@ -136,7 +136,7 @@ const Register = () => {
           </button>
         </div>
 
-        <div className="mt-6 text-center text-gray-600">
+        <div className="mt-6 text-center text-gray-500">
           <p>
             Already have an account?{' '}
             <Link to="/login" className="text-emerald-600 hover:text-emerald-700">

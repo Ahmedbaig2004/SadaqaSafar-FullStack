@@ -119,22 +119,22 @@ export default function NGODashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <header className="bg-indigo-600 shadow">
+    <div className="min-h-screen bg-white dark:bg-gradient-to-br dark:from-emerald-900 dark:to-emerald-800 ">
+      <header className="bg-gradient-to-r   dark:from-emerald-800 dark:to-emerald-700 shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex justify-between items-center">
-            <h1 className="text-3xl font-bold text-white">NGO Dashboard</h1>
-            <div className="flex space-x-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center">
+            <h1 className="text-3xl font-bold mb-4 sm:mb-0">NGO Dashboard</h1>
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
               <button 
                 onClick={() => setShowChatInterface(!showChatInterface)}
-                className="px-4 py-2 bg-white text-indigo-600 rounded-lg hover:bg-indigo-100 transition flex items-center gap-2"
+                className="px-4 py-2 bg-white text-emerald-600 rounded-lg hover:bg-emerald-50 transition flex items-center justify-center gap-2"
               >
                 <MessageSquare className="w-5 h-5" />
                 {showChatInterface ? 'Hide Messages' : 'Show Messages'}
               </button>
               <button 
                 onClick={() => setShowCauseModal(true)}
-                className="px-4 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition flex items-center gap-2"
+                className="px-4 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition flex items-center justify-center gap-2"
               >
                 <Plus className="w-5 h-5" />
                 Create New Cause
@@ -153,24 +153,24 @@ export default function NGODashboard() {
 
         <div className="flex flex-col lg:flex-row gap-8">
           <div className={`${showChatInterface ? 'lg:w-2/3' : 'w-full'}`}>
-            <h2 className="text-2xl font-bold mb-4 text-gray-800">Active Causes</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Active Causes</h2>
             {loading ? (
-              <p className="text-center text-gray-600">Loading causes...</p>
+              <p className="text-center text-gray-600 dark:text-gray-300">Loading causes...</p>
             ) : causes.length === 0 ? (
-              <p className="text-center text-gray-600">No causes found. Create your first cause!</p>
+              <p className="text-center text-gray-600 dark:text-gray-300">No causes found. Create your first cause!</p>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {causes.map((cause) => (
-                  <div key={cause._id} className="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition">
-                    <h3 className="text-xl font-semibold mb-2 text-indigo-600">{cause.title}</h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">{cause.description}</p>
-                    <div className="flex justify-between items-center text-sm text-gray-500">
+                  <div key={cause._id} className="bg-emerald-50 dark:bg-gray-800 shadow-md rounded-lg p-6 hover:shadow-lg transition">
+                    <h3 className="text-xl font-semibold mb-2 dark:text-gray-300">{cause.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">{cause.description}</p>
+                    <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
                       <span className="font-medium">Goal: ₹{cause.goalAmount}</span>
-                      <span className="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs">
+                      <span className="bg-emerald-100 dark:bg-emerald-700 text-emerald-800 dark:text-emerald-200 px-2 py-1 rounded-full text-xs">
                         {cause.category}
                       </span>
                     </div>
-                    <div className="mt-4 text-sm text-gray-500">
+                    <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
                       Ends on: {new Date(cause.endDate).toLocaleDateString()}
                     </div>
                   </div>
@@ -180,8 +180,8 @@ export default function NGODashboard() {
           </div>
 
           {showChatInterface && (
-            <div className="lg:w-1/3 bg-white rounded-lg shadow-lg overflow-hidden">
-              <h2 className="text-2xl font-bold p-4 border-b bg-indigo-50 text-indigo-800">Messages</h2>
+            <div className="lg:w-1/3 bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+              <h2 className="text-2xl font-bold p-4 border-b dark:bg-gradient-to-br dark:from-emerald-800 dark:to-emerald-400 dark:text-gray-100">Messages</h2>
               <div className="h-[calc(100vh-16rem)] flex flex-col">
                 <ChatSidebar
                   conversations={conversations}
@@ -202,60 +202,60 @@ export default function NGODashboard() {
       </main>
 
       {showCauseModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-bold text-indigo-600">Add New Cause</h2>
-              <button onClick={() => setShowCauseModal(false)} className="text-gray-500 hover:text-gray-700">
+              <h2 className="text-xl font-bold dark:text-gray-100">Add New Cause</h2>
+              <button onClick={() => setShowCauseModal(false)} className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
                 <X className="w-6 h-6" />
               </button>
             </div>
             {error && <p className="text-red-500 mb-4">{error}</p>}
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title</label>
+                <label htmlFor="title" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Title</label>
                 <input
                   type="text"
                   id="title"
                   name="title"
                   value={newCause.title}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="description" className="block text-sm font-medium text-gray-700">Description</label>
+                <label htmlFor="description" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Description</label>
                 <textarea
                   id="description"
                   name="description"
                   value={newCause.description}
                   onChange={handleInputChange}
                   rows={3}
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500"
                   required
                 ></textarea>
               </div>
               <div>
-                <label htmlFor="goalAmount" className="block text-sm font-medium text-gray-700">Goal Amount (₹)</label>
+                <label htmlFor="goalAmount" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Goal Amount (₹)</label>
                 <input
                   type="number"
                   id="goalAmount"
                   name="goalAmount"
                   value={newCause.goalAmount}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="category" className="block text-sm font-medium text-gray-700">Category</label>
+                <label htmlFor="category" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Category</label>
                 <select
                   id="category"
                   name="category"
                   value={newCause.category}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500"
                   required
                 >
                   <option value="">Select a category</option>
@@ -267,14 +267,14 @@ export default function NGODashboard() {
                 </select>
               </div>
               <div>
-                <label htmlFor="endDate" className="block text-sm font-medium text-gray-700">End Date</label>
+                <label htmlFor="endDate" className="block text-sm font-medium text-gray-700 dark:text-gray-300">End Date</label>
                 <input
                   type="date"
                   id="endDate"
                   name="endDate"
                   value={newCause.endDate}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500"
                   required
                 />
               </div>
@@ -282,13 +282,13 @@ export default function NGODashboard() {
                 <button
                   type="button"
                   onClick={() => setShowCauseModal(false)}
-                  className="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition"
+                  className="px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-500 transition"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition"
                 >
                   Save Cause
                 </button>

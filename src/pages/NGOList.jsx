@@ -33,8 +33,8 @@ const NGOList = () => {
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h1 className="text-3xl font-bold text-gray-900">NGOs</h1>
-        <p className="mt-2 text-gray-600">Discover and support organizations making a difference</p>
+        <h1 className="text-3xl font-bold text-gray-900  dark:text-white">NGOs</h1>
+        <p className="mt-2 text-gray-500">Discover and support organizations making a difference</p>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -59,15 +59,15 @@ const NGOList = () => {
                   </span>
                 )}
               </div>
-              <div className="flex items-center text-gray-600 mb-2">
+              <div className="flex items-center text-gray-500 mb-2">
                 <Building2 className="w-4 h-4 mr-2" />
                 <span>{ngo.domain}</span>
               </div>
-              <div className="flex items-center text-gray-600 mb-4">
+              <div className="flex items-center text-gray-500 mb-4">
                 <MapPin className="w-4 h-4 mr-2" />
                 <span>{ngo.location}</span>
               </div>
-              <p className="text-gray-600 mb-6 line-clamp-2">{ngo.description}</p>
+              <p className="text-gray-500 mb-6 line-clamp-2">{ngo.description}</p>
               <Link
                 to={`/ngos/${ngo._id}`}
                 className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition"
