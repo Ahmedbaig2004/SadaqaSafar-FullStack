@@ -31,7 +31,7 @@ const NGODetails = () => {
         clearInterval(messagePollingInterval.current);
       }
     };
-  }, [id]);
+  }, [id, selectedCause]);
 
   useEffect(() => {
     if (showChat) {

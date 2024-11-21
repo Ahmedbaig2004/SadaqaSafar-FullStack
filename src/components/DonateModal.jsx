@@ -15,7 +15,6 @@ const DonateModal = ({ cause, onClose }) => {
 
   const handleDonate = async (e) => {
     e.preventDefault();
-    
     if (!user) {
       navigate('/login');
       return;
