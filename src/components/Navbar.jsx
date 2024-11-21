@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Heart, LogIn, UserPlus, LogOut, User, Cog, Sun, Moon, Building2, MoreVertical, Info } from 'lucide-react';
@@ -12,6 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
 
 export default function Navbar() {
   const { user, ngo, logout } = useAuthStore();
@@ -79,8 +81,24 @@ export default function Navbar() {
               <span>About Us</span>
             </Link>
 
+            {ngo ?
+              <Link to="/dashboard" className="text-gray-600 hover:text-emerald-600">
+                Dashboard
+              </Link>
+
+              :
+              <Link to="/donations" className="text-gray-600 hover:text-emerald-600">
+                My Donations
+              </Link>
+            }
+          </div>
+
+          {/* <div className="flex items-center space-x-4">
+            {(user || ngo) ? (
+
 
             {user || ngo ? (
+
               <>
                 <div className="flex items-center space-x-2">
                   <User className="h-5 w-5 text-gray-600 dark:text-gray-300" />
@@ -95,6 +113,39 @@ export default function Navbar() {
                     <span>Logout</span>
                   </button>
                 </div>
+
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-600 hover:text-emerald-600"
+                >
+                  <LogOut className="h-5 w-5" />
+                  <span>Logout</span>
+                </button>
+              </> */}
+          <div className="flex items-center space-x-4">
+            {(user || ngo) ? (
+              <>
+                {/* Profile Settings Link */}
+                <Link
+                  to={ngo ? '/ngo-profile/settings' : '/profile/settings'}
+                  className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-600 hover:text-emerald-600"
+                >                
+                <div className="flex items-center space-x-2 text-gray-600">
+                    <User className="h-5 w-5" />
+                    <span>{ngo ? ngo.name : user.name}</span>
+                  </div>
+                </Link>
+
+                {/* Logout Button */}
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-600 hover:text-emerald-600"
+                >
+                  <LogOut className="h-5 w-5" />
+                  <span>Logout</span>
+                </button>
+
+
               </>
             ) : (
               <>

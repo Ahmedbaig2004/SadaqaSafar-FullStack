@@ -10,6 +10,7 @@ import causeRoutes from './routes/causeRoutes.js';
 import donationRoutes from './routes/donationRoutes.js';
 import ngoRoutes from './routes/ngoRoutes.js';
 import messageRoutes from './routes/messageRoutes.js';
+import profileRoutes from "./routes/profileRoutes.js";
 
 
 dotenv.config();
@@ -19,7 +20,7 @@ const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
     origin: "http://localhost:5173",
-    methods: ["GET", "POST"]
+    methods: ["GET", "POST", "PUT" ],
   }
 });
 
@@ -58,6 +59,8 @@ app.use('/api/donations', donationRoutes);
 app.use('/api/ngos', ngoRoutes);
 app.use('/api/causes', causeRoutes);
 app.use("/api/messages",messageRoutes)
+app.use("/api/profile", profileRoutes);
+
 process.on('uncaughtException', (error) => {
   console.error('Uncaught Exception:', error);
   // Optionally: process.exit(1) to forcefully shut down the server
