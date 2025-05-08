@@ -142,6 +142,12 @@ const Register = () => {
             <Link to="/login" className="text-emerald-600 hover:text-emerald-700">
               Sign in
             </Link>
+         <p>
+            Don't have an NGO account?{' '}
+            <Link to="/ngo-register" className="text-emerald-600 hover:text-emerald-700">
+              Register here
+            </Link>
+          </p>
           </p>
         </div>
       </form>
