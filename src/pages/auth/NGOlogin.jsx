@@ -102,7 +102,7 @@ export default function NGOLogin() {
         <div className="mt-6 text-center text-gray-500">
           <p>
             Don't have an NGO account?{' '}
-            <Link to="/register-ngo" className="text-emerald-600 hover:text-emerald-700">
+            <Link to="/ngo-register" className="text-emerald-600 hover:text-emerald-700">
               Register here
             </Link>
           </p>
